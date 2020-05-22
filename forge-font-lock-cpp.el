@@ -54,6 +54,8 @@
 
 ;;; Code:
 
+(setq font-lock-keyword-face nil)
+
 (defgroup forge-font-lock-c++ nil
   "Provides font-locking as a Minor Mode for Modern C++"
   :group 'faces)
@@ -164,8 +166,6 @@ http://en.cppreference.com/w/cpp/language/integer_literal"
   :group 'forge-font-lock-c++)
 
 (defvar forge-font-lock-c++-literal-integer nil)
-
-(setq font-lock-keyword-face nil)
 
 (defun forge-c++-generate-font-lock-literal-integer ()
   (eval-when-compile
