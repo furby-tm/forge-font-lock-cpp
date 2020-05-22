@@ -24,7 +24,7 @@
 ;; In your init Emacs file add:
 ;;     (add-hook 'c++-mode-hook #'forge-font-lock-c++-mode)
 ;; or:
-;;     (forge-font-lock-c++-mode t)
+;;     (forge-font-lock-c++-global-mode t)
 
 ;; For the current buffer, the minor-mode can be turned on/off via the
 ;; command:
@@ -326,7 +326,7 @@ http://en.cppreference.com/w/cpp/header/cstdint"
         (font-lock-fontify-buffer)))))
 
 ;;;###autoload
-(define-global-minor-mode forge-font-lock-c++-mode forge-font-lock-c++-mode
+(define-global-minor-mode forge-font-lock-c++-global-mode forge-font-lock-c++-mode
   (lambda ()
     (when (apply 'derived-mode-p '(c++-mode))
       (forge-font-lock-c++-mode 1)))
