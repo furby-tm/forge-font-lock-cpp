@@ -64,7 +64,7 @@
 
 (defcustom forge-c++-types
   (eval-when-compile
-    (sort '("bool" "char" "char8_t" "char16_t" "char32_t" "double" "float" "int" "long" "short" "signed" "unsigned" "void" "wchar_t")
+    (sort '("ojsojs")
           'forge-c++-string-lenght>))
   "List of C++ types. See doc:
 http://en.cppreference.com/w/cpp/language/types"
