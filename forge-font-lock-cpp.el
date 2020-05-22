@@ -165,6 +165,8 @@ http://en.cppreference.com/w/cpp/language/integer_literal"
 
 (defvar forge-font-lock-c++-literal-integer nil)
 
+(setq font-lock-keyword-face nil)
+
 (defun forge-c++-generate-font-lock-literal-integer ()
   (eval-when-compile
     (let* ((integer-suffix-regexp (regexp-opt (sort '("ull" "LLu" "LLU" "llu" "llU" "uLL" "ULL" "Ull" "ll" "LL" "ul" "uL" "Ul" "UL" "lu" "lU" "LU" "Lu" "u" "U" "l" "L") 'forge-c++-string-lenght>)))
