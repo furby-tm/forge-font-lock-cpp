@@ -22,13 +22,13 @@
 
 ;; Melpa: [M-x] package-install [RET] forge-font-lock-cpp [RET]
 ;; In your init Emacs file add:
-;;     (add-hook 'c++-mode-hook #'modern-c++-font-lock-mode)
+;;     (add-hook 'c++-mode-hook #'forge-font-lock-c++-mode)
 ;; or:
-;;     (modern-c++-font-lock-global-mode t)
+;;     (forge-font-lock-c++-mode t)
 
 ;; For the current buffer, the minor-mode can be turned on/off via the
 ;; command:
-;;     [M-x] modern-c++-font-lock-mode [RET]
+;;     [M-x] forge-font-lock-c++-mode [RET]
 
 ;; More documentation:
 ;; https://github.com/tyler-furby/forge-font-lock-cpp/blob/master/README.md
@@ -309,12 +309,12 @@ http://en.cppreference.com/w/cpp/header/cstdint"
     (font-lock-remove-keywords mode modern-c++-font-lock-stl-cstdint)))
 
 ;;;###autoload
-(define-minor-mode modern-c++-font-lock-mode
+(define-minor-mode forge-font-lock-c++-mode
   "Provides font-locking as a Minor Mode for Modern C++"
   :init-value nil
   :lighter " mc++fl"
   :group 'modern-c++-font-lock
-  (if modern-c++-font-lock-mode
+  (if forge-font-lock-c++-mode
       (modern-c++-font-lock-add-keywords)
     (modern-c++-font-lock-remove-keywords))
   ;; As of Emacs 24.4, `font-lock-fontify-buffer' is not legal to
@@ -326,10 +326,10 @@ http://en.cppreference.com/w/cpp/header/cstdint"
         (font-lock-fontify-buffer)))))
 
 ;;;###autoload
-(define-global-minor-mode modern-c++-font-lock-global-mode modern-c++-font-lock-mode
+(define-global-minor-mode forge-font-lock-c++-mode forge-font-lock-c++-mode
   (lambda ()
     (when (apply 'derived-mode-p '(c++-mode))
-      (modern-c++-font-lock-mode 1)))
+      (forge-font-lock-c++-mode 1)))
   :group 'modern-c++-font-lock)
 
 (provide 'forge-font-lock-cpp)

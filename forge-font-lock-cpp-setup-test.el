@@ -26,7 +26,7 @@
                (concat forge-font-lock-cpp-test-setup-directory dir)))
 
 (require 'forge-font-lock-cpp)
-(add-hook 'text-mode-hook #'modern-c++-font-lock-mode)
+(add-hook 'text-mode-hook #'forge-font-lock-c++-mode)
 
 (require 'forge-font-lock-cpp-test)
 
