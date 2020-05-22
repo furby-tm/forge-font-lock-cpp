@@ -54,8 +54,6 @@
 
 ;;; Code:
 
-(setq font-lock-keyword-face nil)
-
 (defgroup forge-font-lock-c++ nil
   "Provides font-locking as a Minor Mode for Modern C++"
   :group 'faces)
